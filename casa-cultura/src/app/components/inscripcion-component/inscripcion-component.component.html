@@ -1,0 +1,244 @@
+
+<form class="formulario-inscripcion" [formGroup]="inscripcionForm">
+  <!-- DATOS PERSONALES DEL ALUMNO -->
+
+  <h3>DATOS PERSONALES DEL ALUMNO</h3>
+   <div class="campo">
+    <p class="espacio">Seleccione el taller al cual se quiere inscribir</p>
+    <mat-form-field appearance="outline">
+      <mat-label></mat-label>
+      <mat-select formControlName="talleres">
+        <mat-option *ngFor="let taller of talleres" [value]="taller">{{ taller }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+ <div class="fila">
+  <div class="campo">
+    <p class="espacio">Ingresa tu apellido paterno</p>
+    <mat-form-field appearance="outline">
+      <mat-label>Apellido paterno</mat-label>
+      <input matInput formControlName="apellidoPaterno">
+    </mat-form-field>
+  </div>
+  <div class="campo">
+    <p class="espacio">Ingresa tu apellido materno</p>
+    <mat-form-field appearance="outline">
+      <mat-label>Apellido materno</mat-label>
+      <input matInput formControlName="apellidoMaterno">
+    </mat-form-field>
+  </div>
+</div>
+<div>
+</div>
+<div class="fila">
+  <div class="campo">
+    <p class="espacio">Ingresa tus nombre(s)</p>
+    <mat-form-field appearance="outline">
+      <mat-label>Nombre(s)</mat-label>
+      <input matInput formControlName="nombres">
+    </mat-form-field>
+  </div>
+
+  <div class="campo">
+    <p class="espacio">Ingresa tu fecha de nacimiento</p>
+    <mat-form-field appearance="outline">
+      <mat-label>Fecha de nacimiento</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="fechaNacimiento">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+</div>
+  <div class="fila">
+    <div class="campo">
+      <p class="espacio">Ingresa tu edad</p>
+    <mat-form-field appearance="outline">
+      <mat-label>Edad</mat-label>
+      <mat-select formControlName="edad">
+        <mat-option *ngFor="let edad of edades" [value]="edad">{{ edad }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+     <div class="campo">
+      <p class="espacio">Ingresa tu sexo</p>
+  <mat-form-field appearance="outline">
+      <mat-label>Sexo</mat-label>
+      <mat-select formControlName="sexo">
+        <mat-option value="Femenino">Femenino</mat-option>
+        <mat-option value="Masculino">Masculino</mat-option>
+      </mat-select>
+    </mat-form-field> </div>
+  </div>
+  <div class="fila">
+    <div class="campo">
+      <p class="espacio">Ingresa tu numero telefonico</p>
+    <mat-form-field appearance="outline">
+      <mat-label>Teléfono</mat-label>
+      <input matInput formControlName="telefono">
+    </mat-form-field></div>
+    <div class="campo">
+      <p class="espacio">Ingresa tu telefono de casa</p>
+    <mat-form-field appearance="outline">
+      <mat-label>Teléfono de casa</mat-label>
+      <input matInput formControlName="telefonoCasa">
+    </mat-form-field></div>
+  </div>
+  <!-- DATOS MEDICOS -->
+<h3>DATOS MEDICOS DEL ALUMNO</h3>
+<div class="fila">
+  <div class="campo">
+    <p class="espacio">Selecciona tu tipo de sangre</p>
+    <mat-form-field appearance="outline">
+      <mat-label>Tipo de sangre</mat-label>
+      <mat-select formControlName="tipoSangre">
+        <mat-option *ngFor="let tipo of tiposSangre" [value]="tipo">{{ tipo }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="campo">
+    <p class="espacio">¿Padece algún tipo de alergia?</p>
+    <mat-form-field appearance="outline">
+      <mat-label>Alergia</mat-label>
+      <mat-select formControlName="alergias">
+        <mat-option *ngFor="let alergia of alergias" [value]="alergia">{{ alergia }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<div class="fila">
+  <div class="campo">
+    <p class="espacio">¿Estas actualmente bajo tratamiento medico? </p>
+    <mat-form-field appearance="outline">
+      <mat-label>Tratamiento medico</mat-label>
+      <mat-select formControlName="tratamientos">
+        <mat-option *ngFor="let tratamiento of tratamientos" [value]="tratamiento">{{ tratamiento }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+   <div class="campo">
+    <p class="espacio">En  dado caso de contestar “SI” explique su respuesta a continuación</p>
+    <mat-form-field appearance="outline">
+      <mat-label></mat-label>
+      <input matInput formControlName="respuesta">
+    </mat-form-field>
+  </div>
+</div>
+<div class="fila">
+<div class="campo">
+    <p class="espacio">En  dado caso de contestar “SI” explique su respuesta a continuación</p>
+    <mat-form-field appearance="outline">
+      <mat-label></mat-label>
+      <input matInput formControlName="respuesta">
+    </mat-form-field>
+  </div>
+ <div class="campo">
+    <p class="espacio">Ingresa el nombre del tutor en caso de emergencia </p>
+    <mat-form-field appearance="outline">
+      <mat-label>Tutor en caso de emergencia</mat-label>
+      <input matInput formControlName="emergencia">
+    </mat-form-field>
+  </div>
+</div>
+<div class="fila">
+  <div class="campo">
+    <p class="espacio">¿Padece algún tipo de enfermedad crónica ?  </p>
+    <mat-form-field appearance="outline">
+      <mat-label>Enfermedad cronica</mat-label>
+      <mat-select formControlName="tratamientos">
+        <mat-option *ngFor="let enfermedad of enfermedades" [value]="enfermedad">{{ enfermedad }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+   <div class="campo">
+    <p class="espacio">Ingrese el numero telefónico en caso de emergencia </p>
+    <mat-form-field appearance="outline">
+      <mat-label>Telefono</mat-label>
+      <input matInput formControlName="telefono">
+    </mat-form-field>
+  </div>
+</div>
+<div class="campo">
+    <p class="espacio">En  dado caso de contestar “SI” explique su respuesta a continuación</p>
+    <mat-form-field appearance="outline">
+      <mat-label></mat-label>
+      <input matInput formControlName="respuesta">
+    </mat-form-field>
+  </div>
+ <!-- DATOS ACADEMICOS-->
+<h3>DATOS ACADEMICOS DEL ALUMNO</h3>
+<div class="fila">
+  <div class="campo">
+    <p class="espacio">¿Actualmente estudias ? </p>
+    <mat-form-field appearance="outline">
+      <mat-label></mat-label>
+      <mat-select formControlName="estudio">
+        <mat-option *ngFor="let estudio of estudios" [value]="estudio">{{ estudio }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  </div>
+  <div class="fila">
+    <div class="campo">
+    <p class="espacio">En  dado caso de contestar “SI” especifique el grado de estudio </p>
+    <mat-form-field appearance="outline">
+      <mat-label></mat-label>
+      <input matInput formControlName="respuesta">
+    </mat-form-field>
+  </div>
+  <div class="campo">
+    <p class="espacio">Seleccione la Institucion a la que acudes</p>
+    <mat-form-field appearance="outline">
+      <mat-label></mat-label>
+     <mat-select>
+     <input matInput formControlName="escuela">
+      <mat-option *ngFor="let escuela of escuelas" [value]="escuela">{{escuela}}</mat-option>
+     </mat-select>
+    </mat-form-field>
+  </div>
+  </div>
+  <div class="fila">
+    <div class="campo">
+      <p class="espacio">Menciona otra escuela, si no se encuentra en la lista</p>
+      <mat-form-field appearance="outline">
+      <mat-label>Otra</mat-label>
+      <input matInput formControlName="respuesta">
+    </mat-form-field>
+    </div>
+    <div class="campo">
+      <p class="espacio">Estado</p>
+      <mat-form-field appearance="outline">
+      <mat-label></mat-label>
+     <mat-select>
+      <input matInput formControlName="estado">
+      <mat-option *ngFor="let estado of estados" [value]="estado">{{estado}}</mat-option>
+     </mat-select>
+     </mat-form-field>
+    </div>
+
+  </div>
+  <h3>DATOS PERSONALES DEL TUTOR O RESPONSABLE</h3>
+   <div class="fila">
+  <div class="campo">
+    <p class="espacio">Nombre del tutor o responsable </p>
+    <mat-form-field appearance="outline">
+      <mat-label>Tutor o responsable</mat-label>
+      <input matInput formControlName="tutor">
+    </mat-form-field>
+  </div>
+  <div class="campo">
+    <p class="espacio">Ingrese la dirección de su domicilio</p>
+    <mat-form-field appearance="outline">
+      <mat-label>Direccion de domicilio</mat-label>
+      <input matInput formControlName="domicilio">
+    </mat-form-field>
+  </div>
+</div>
+<div class="campo">
+      <p class="espacio">Ingresa el numero telefónico del tutor o responsable</p>
+    <mat-form-field appearance="outline">
+      <mat-label>Teléfono</mat-label>
+      <input matInput formControlName="telefono">
+    </mat-form-field></div>
+</form>
+<button class="boton"   matButton="filled">Enviar</button>
